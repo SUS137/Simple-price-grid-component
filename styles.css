@@ -1,0 +1,224 @@
+:root{
+
+--Light-Gray: hsl(204, 43%, 93%);
+--Grayish-Blue: hsl(218, 22%, 67%);
+--Cyan: hsl(179, 62%, 43%);
+--Bright-Yellow: hsl(71, 73%, 54%);
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+    background-color: var(--Light-Gray);
+}
+
+.main-grid{
+width:100%;
+height: 100vh;
+margin:0 auto;
+max-width:375px;
+box-shadow: 0 2px 5px ;
+display: grid;
+grid-template-columns: 1fr 85% 1fr;
+grid-template-rows: 1fr repeat(3 , max-content) 1fr;
+grid-template-areas: 
+
+" . . ."
+". info ."
+". price ."
+". why ."
+".  .  ."
+;
+
+
+}
+
+.container{
+    padding:1em 0.8em;
+    text-align: left;
+}
+/*INFO*/
+.info{
+    grid-area:info;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    gap:0.6em;
+    border-radius: 5px 5px 0 0;
+   }
+
+   .info-title{
+    font-size: 11px;
+    color:var(--Cyan);
+    letter-spacing: -0.5px;
+    text-shadow: 0 1px 1px;
+   }
+
+   .info-paragraf{
+    font-size: 8px;
+    color:var(--Bright-Yellow);
+    font-weight: 700;
+    text-shadow: 0 0.5px 0.5px;
+   }
+
+   .info-paragraf2{
+
+    font-size:7.7px;
+    line-height: 1.7;
+    letter-spacing: -0.3px;
+    color:var(--Grayish-Blue);
+    text-shadow: 0 0.5px 0.5px;
+    
+   }
+/*PRICE*/
+.price{
+    grid-area: price;
+    background-color: var(--Cyan);
+}
+
+.price-title{
+
+    font-size: 9px;
+    color:white;
+    font-weight: 700;
+
+}
+
+.price-paragraf{
+
+    color:white;
+    font-weight: 700;
+    margin-top: 0.6em;
+}
+
+.price-month{
+    font-weight: 400;
+    font-size: 9px;
+    margin-left: 0.5em;
+    color:rgba(255,255,255,0.5);
+   
+}
+.price-link{
+    display: block;
+    text-decoration: none;
+    font-size:8.5px ;
+    color:rgba(255,255,255,0.9);
+    width:99%;
+    margin:0 auto;
+    padding:14px;
+    background-color: var(--Bright-Yellow);
+    margin-top:1.5em;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: -5px;
+    font-weight: 700;
+    border: 2px solid  hsl(179, 62%, 43%); 
+    box-shadow: 0 2px 5px hsl(179, 63%, 34%, 0.5);
+}
+
+.price-paragraf2
+{
+    margin-top:0.5em;
+    font-size:8.5px;
+    color:rgba(255,255,255,0.9);
+}
+
+/*WHY*/
+.why{
+
+    grid-area: why;
+    background-color:  hsl(179, 62%, 43%,0.8);
+    border-radius:0 0 5px 5px;
+}
+
+.why-title{
+    margin-top:-8px;
+    font-size: 10px;
+    color:white;
+    font-weight: 700;
+
+}
+
+.why-list{
+    margin-top: 0.5em;
+    list-style: none;
+    color:rgba(255,255,255,0.7);
+   
+}
+.why-item{
+   
+    font-size: 7.5px;
+    font-weight: 400;
+    line-height: 1.4;
+    
+
+}
+
+@media (min-width:768px) {
+
+    .main-grid{
+        width:100vw;
+        height: 100vh;
+        margin:0;
+        max-width: none;
+        display: grid;
+        grid-template-columns: 1fr 320px 320px 1fr;
+        grid-template-rows: 1fr repeat(2 , max-content) 1fr;
+        grid-template-areas: 
+        
+        " . . . ."
+        ". info info ."
+        ". price  why ."
+        ".  . . . "
+        ;
+        
+        }
+
+        .container{
+            padding:1em 1.2em;
+            text-align: left;
+        }
+
+        .info{
+            grid-area:info;
+            height:200px;
+          
+           }
+
+           .info-paragraf2{
+
+          
+            letter-spacing: 0px;
+            
+           }
+           
+        /*PRICE*/
+        .price{
+            grid-area: price;
+            border-radius:0 0 0 5px;
+        }
+        
+       
+        
+        /*WHY*/
+        .why{
+        
+            grid-area: why;
+            border-radius:0 0 5px 0px;
+        }
+        
+        .why-title{
+            margin-top:-0px;
+           
+        
+        }
+     
+    
+}
